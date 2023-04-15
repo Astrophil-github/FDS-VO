@@ -1,7 +1,7 @@
 
 
 import sys
-sys.path.append("/home/a/DF-VO")
+sys.path.append("/home/a/FDS-VO")
 import cv2
 import copy
 from glob import glob
@@ -26,7 +26,7 @@ import numpy as np
 
 
 
-class DFVO():
+class FDSVO():
     def __init__(self, cfg):
         """
         Args:
@@ -513,7 +513,7 @@ class DFVO():
     def main(self):
         """Main program
         """
-        print("==> Start DF-VO")
+        print("==> Start FDS-VO")
         print("==> Running sequence: {}".format(self.cfg.seq))
 
         if self.cfg.no_confirm:
@@ -526,7 +526,7 @@ class DFVO():
 
 
         for img_id in tqdm(range(start_frame, len(self.dataset), self.cfg.frame_step)):
-            self.timers.start('DF-VO')
+            self.timers.start('FDS-VO')
             self.tracking_mode = "Ess. Mat."
 
             """ Data reading """
@@ -570,7 +570,7 @@ class DFVO():
 
             self.tracking_stage += 1
 
-            self.timers.end('DF-VO')
+            self.timers.end('FDS-VO')
 
         print("=> Finish!")
 
